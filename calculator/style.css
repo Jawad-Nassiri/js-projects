@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.calculator {
+  background: #000;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  width: 380px;
+}
+
+.output {
+  background: #4e505f;
+   border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: right;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.expression {
+  color: #d2d0d0;
+  font-size: 20px;
+  margin-bottom: 10px;
+  min-height: 24px;
+}
+
+.result {
+  color: #fff;
+  font-size: 42px;
+  font-weight: 300;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.btn {
+  border: none;
+  border-radius: 12px;
+  font-size: 26px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+  color: #fff;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn.dark,
+.btn.dark:focus {
+  background: #2e2f38;
+}
+
+.btn.dark:hover {
+  background: #32333c;
+}
+
+.btn.light,
+.btn.light:focus {
+  background: #4e505f;
+}
+
+.btn.light:hover {
+  background: #606272;
+}
+
+.btn.blue,
+.btn.blue:focus {
+  background: #4b5efc;
+  color: #fff;
+  font-size: 30px;
+}
+
+.btn.blue:hover {
+  background: #3143df;
+}
