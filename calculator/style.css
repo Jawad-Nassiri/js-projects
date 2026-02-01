@@ -13,9 +13,6 @@ body {
   align-items: center;
   min-height: 100vh;
   background: linear-gradient(135deg, #0f0f0f 0%, #2d2d2d 100%);
-
-
-
 }
 
 .calculator {
@@ -28,7 +25,7 @@ body {
 
 .output {
   background: #4e505f;
-   border-radius: 12px;
+  border-radius: 12px;
   padding: 20px;
   margin-bottom: 20px;
   text-align: right;
@@ -36,6 +33,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 135px;
 }
 
 .expression {
