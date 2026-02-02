@@ -13,6 +13,11 @@ const clickHandler = (event) => {
 
   switch (action) {
     case "number":
+      if (expressionElem.textContent !== "") {
+        expressionElem.textContent = "";
+        resultElem.textContent = "";
+        result = "";
+      }
       updateResult(value);
       break;
 
@@ -26,6 +31,9 @@ const clickHandler = (event) => {
       break;
     case "submit":
       calculate(result);
+      break;
+    case "clear":
+      clear();
       break;
   }
 };
@@ -50,7 +58,7 @@ const calculate = (operation) => {
     }
   }
 
-    for (let i = 1; i < arr.length; i += 2) {
+  for (let i = 1; i < arr.length; i += 2) {
     if (arr[i] === "/") {
       result = Number(arr[i - 1]) / Number(arr[i + 1]);
       arr.splice(i - 1, 3, result);
@@ -58,7 +66,7 @@ const calculate = (operation) => {
     }
   }
 
-    for (let i = 1; i < arr.length; i += 2) {
+  for (let i = 1; i < arr.length; i += 2) {
     if (arr[i] === "+") {
       result = Number(arr[i - 1]) + Number(arr[i + 1]);
       arr.splice(i - 1, 3, result);
@@ -66,7 +74,7 @@ const calculate = (operation) => {
     }
   }
 
-    for (let i = 1; i < arr.length; i += 2) {
+  for (let i = 1; i < arr.length; i += 2) {
     if (arr[i] === "-") {
       result = Number(arr[i - 1]) - Number(arr[i + 1]);
       arr.splice(i - 1, 3, result);
@@ -79,4 +87,11 @@ const calculate = (operation) => {
   result = arr[0].toString();
 };
 
+const clear = () => {
+  result = "";
+  expressionElem.textContent = "";
+  resultElem.textContent = "";
+};
+
 buttonsContainer.addEventListener("click", clickHandler);
+
