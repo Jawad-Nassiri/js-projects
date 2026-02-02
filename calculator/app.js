@@ -35,6 +35,12 @@ const clickHandler = (event) => {
     case "clear":
       clear();
       break;
+    case "backspace":
+      backspace();
+      break;
+    case "decimal":
+      decimal();
+      break;
   }
 };
 
@@ -93,5 +99,25 @@ const clear = () => {
   resultElem.textContent = "";
 };
 
-buttonsContainer.addEventListener("click", clickHandler);
+const backspace = () => {
+  result = result.slice(0, -1);
+  resultElem.textContent = result;
+};
 
+const decimal = () => {
+  const lastOperatorIndex = Math.max(
+    result.lastIndexOf('+'),
+    result.lastIndexOf('-'),
+    result.lastIndexOf('*'),
+    result.lastIndexOf('/')
+  );
+  
+  const currentNumber = result.slice(lastOperatorIndex + 1);
+
+  if (!currentNumber.includes('.')) {
+    result += '.';
+    resultElem.textContent = result;
+  }
+};
+
+buttonsContainer.addEventListener("click", clickHandler);
